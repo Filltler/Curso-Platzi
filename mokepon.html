@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html> 
+    <head>
+        <meta charset:"utf-8"/>
+        <title>Mokepon!</title>
+        
+        <script src="./js/mokepon.js"></script>
+        
+    </head>
+    <body>
+        <h1>Mokepon! 🔥💧🌳</h1>
+
+        <section id="seleccionar-mascota">
+            <h2>Elige tu Mokepon:</h2>
+
+            <p>
+                <label for="hipodoge">Hipodoge</label>
+                <input type="radio" name="mascota" id="hipodoge"/>
+            </p>
+
+            <p>
+                <label for="capipepo">Capipepo</label>
+                <input type="radio" name="mascota" id="capipepo"/>
+            </p>
+
+            <p>
+                <label for="ratigueya">Ratigueya</label>
+                <input type="radio" name="mascota" id="ratigueya"/>
+            </p>
+
+            <button id="boton-mascota">Seleccionar</button>
+        </section>
+        
+        <section id="seleccionar-ataque">
+
+            <h2>Elige tu ataque:</h2>
+
+            <p>Tu Mokepon <span id="mascota-jugador"></span> tiene <span id="vidas-jugador">3</span> vidas</p>
+            <p>El Mokepon <span id="mascota-enemigo"></span> del enemigo tiene <span id="vidas-enemigo">3</span> vidas</p>
+            <p>
+                <button id="boton-fuego">Fuego 🔥</button>
+                <button id="boton-agua">Agua 💦</button>
+                <button id="boton-planta">Planta 🍃</button>
+            </p>
+            
+        </section>
+
+        <section id="mensajes">
+            
+        </section>
+
+        <section id="reiniciar">
+
+            <button id="boton-escapar">Escapar</button>
+
+        </section>
+       
+            
+        
+    </body>
+</html>
