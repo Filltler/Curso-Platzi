@@ -22,7 +22,7 @@ function iniciarJuego() {
   botonAgua.addEventListener("click", ataqueAgua);
   let botonPlanta = document.getElementById("boton-planta");
   botonPlanta.addEventListener("click", ataquePlanta);
-  
+    
   let botonEscapar = document.getElementById("boton-escapar");
   botonEscapar.addEventListener("click", reiniciarJuego)
 
@@ -33,16 +33,13 @@ function aleatorio(min, max) {
 }
 
 function seleccionarMascotaJugador() {
+  let jugar = 1;
   let sectionSeleccionarMascota = document.getElementById("seleccionar-mascota")
   sectionSeleccionarMascota.style.display = "none"
 
   let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
-  sectionSeleccionarAtaque.style.display = "block"
+  sectionSeleccionarAtaque.style.display = "flex"
 
-  let sectionReiniciar = document.getElementById("boton-escapar")
-  sectionReiniciar.style.display = "block"
-
-  let jugar = 1;
   let inputHipodoge = document.getElementById("hipodoge");
   let inputCapipepo = document.getElementById("capipepo");
   let inputRatigueya = document.getElementById("ratigueya");
@@ -55,7 +52,8 @@ function seleccionarMascotaJugador() {
   } else if (inputRatigueya.checked) {
     spanMascotaJugador.innerHTML = "Ratigueya";
   } else {
-    alert("Debes Seleccionar tu Mokepon Primero");
+    alert("Debes Seleccionar tu Mokepon Primero")
+    reiniciarJuego();
     jugar = 0;
   }
   if (jugar == 1) {
@@ -92,6 +90,10 @@ function ataquePlanta() {
 }
 
 function ataqueAleatorioEnemigo() {
+
+  let sectionReiniciar = document.getElementById("boton-escapar")
+  sectionReiniciar.style.display = "flex"
+
   let ataqueAleatorio = aleatorio(1, 3);
 
   if (ataqueAleatorio == 1) {
