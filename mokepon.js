@@ -7,13 +7,16 @@ window.addEventListener("load", iniciarJuego);
 
 function iniciarJuego() {
 
+  let mensajes = document.getElementById("mensajes")
+  mensajes.style.display = "none"
+  
   let sectionSeleccionarAtaque = document.getElementById("seleccionar-ataque")
   sectionSeleccionarAtaque.style.display = "none"
 
   let sectionReiniciar = document.getElementById("boton-escapar")
   sectionReiniciar.style.display = "none"
 
-  let botonMascotaJugador = document.getElementById("boton-mascota");
+  let botonMascotaJugador = document.getElementById("boton-seleccionar");
   botonMascotaJugador.addEventListener("click", seleccionarMascotaJugador);
 
   let botonFuego = document.getElementById("boton-fuego");
@@ -62,6 +65,7 @@ function seleccionarMascotaJugador() {
 }
 
 function seleccionarMascotaEnemigo() {
+  
   let mascotaAleatorio = aleatorio(1, 3);
   let spanMascotaEnemigo = document.getElementById("mascota-enemigo");
 
@@ -90,6 +94,9 @@ function ataquePlanta() {
 }
 
 function ataqueAleatorioEnemigo() {
+
+  let mensajes = document.getElementById("mensajes")
+  mensajes.style.display = "flex"
 
   let sectionReiniciar = document.getElementById("boton-escapar")
   sectionReiniciar.style.display = "flex"
@@ -134,17 +141,6 @@ function combate() {
     }
     revisarVidas()
   }
-
-  function crearBotonReiniciar(){
-    let seccionReiniciar = document.getElementById("reiniciar")
-    let botonReiniciar = document.createElement("button")
-    
-    botonReiniciar.innerHTML = "Reiniciar Combate"
-
-    seccionReiniciar.appendChild(botonReiniciar)
-    botonReiniciar.addEventListener("click", reiniciarJuego)
-
-  }
   
   function revisarVidas() {
     
@@ -159,35 +155,55 @@ function combate() {
 }
 
 function crearMensaje(resultado) {
-  let sectionMensajes = document.getElementById("mensajes");
+  
+  let sectionMensajes = document.getElementById("resultado");
+  let ataquesDelJugador = document.getElementById("ataques-del-jugador");
+  let ataquesDelEnemigo = document.getElementById("ataques-del-enemigo");
 
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML =
-    "Tu Mokepon usó " +
-    ataqueJugador +
-    ", el Mokepon del enemigo usó " +
-    ataqueEnemigo +
-     " - " + resultado;
+  let nuevoAtaqueDelJugador = document.createElement("p");
+  let nuevoAtaqueDelEnemigo = document.createElement("p");
+  
+  sectionMensajes.innerHTML = resultado
+  nuevoAtaqueDelJugador.innerHTML = ataqueJugador
+  nuevoAtaqueDelEnemigo.innerHTML = ataqueEnemigo
 
-  sectionMensajes.appendChild(parrafo);
+  
+  ataquesDelJugador.appendChild(nuevoAtaqueDelJugador);
+  ataquesDelEnemigo.appendChild(nuevoAtaqueDelEnemigo);
 }
 
+  function crearBotonReiniciar(){
+    let seccionReiniciar = document.getElementById("reiniciar")
+    let botonReiniciar = document.createElement("button");
+    botonReiniciar.id= "boton-reiniciar"
+    
+    botonReiniciar.innerHTML = "Reiniciar Combate"
+
+    seccionReiniciar.appendChild(botonReiniciar)
+    botonReiniciar.addEventListener("click", reiniciarJuego)
+
+  }
+
 function crearMensajeFinal(resultadoFinal) {
-  let sectionMensajes = document.getElementById("mensajes");
-
-  let parrafo = document.createElement("p");
-  parrafo.innerHTML = resultadoFinal
-
-  sectionMensajes.appendChild(parrafo);
+  let sectionMensajes = document.getElementById("resultado");
+  sectionMensajes.innerHTML = resultadoFinal
 
   let botonFuego = document.getElementById("boton-fuego");
   botonFuego.disabled = true
+  botonFuego.style.display= "none"
+
   let botonAgua = document.getElementById("boton-agua");
   botonAgua.disabled = true
+  botonAgua.style.display= "none"
+
   let botonPlanta = document.getElementById("boton-planta");
   botonPlanta.disabled = true
+  botonPlanta.style.display= "none"
+
   let sectionReiniciar = document.getElementById("boton-escapar")
   sectionReiniciar.style.display = "none"
+
+
 }
 
 function reiniciarJuego() {
