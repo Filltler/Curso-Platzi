@@ -1,84 +1,67 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <meta charset:"utf-8"/ name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset:"utf-8"/ name="viewport" content="width=device-width,
+    initial-scale=1">
     <title>Mokepon!</title>
-
-    <script src="./js/mokepon.js"></script>
     <link rel="stylesheet" href="./styles.css" />
   </head>
   <body>
     <section id="seleccionar-mascota">
       <h1 class="titulo">Mokepon!</h1>
       <h2 class="subtitulo">Elige tu Mokepon:</h2>
-      <div class="tarjetas">
-        <input type="radio" name="mascota" id="hipodoge" />
-        <label class="tarjeta-de-mokepon" for="hipodoge">
-          <p>Hipodoge</p>
-          <img
-            src="./assets/mokepons_mokepon_hipodoge_attack.png"
-            alt="Hipodoge"
-          />
-        </label>
+      <div id="contenedorTarjetas" class="tarjetas">
 
-        <input type="radio" name="mascota" id="capipepo" />
-        <label class="tarjeta-de-mokepon" for="capipepo">
-          <p>Capipepo</p>
-          <img
-            src="./assets/mokepons_mokepon_capipepo_attack.png"
-            alt="Capipepo"
-          />
-        </label>
-
-        <input type="radio" name="mascota" id="ratigueya" />
-        <label class="tarjeta-de-mokepon" for="ratigueya">
-          <p>Ratigueya</p>
-          <img
-            src="./assets/mokepons_mokepon_ratigueya_attack.png"
-            alt="Ratigueya"
-          />
-        </label>
       </div>
 
       <button id="boton-seleccionar">Seleccionar</button>
     </section>
 
+    <section id="ver-mapa">
+        <h1 class="tituloMapa">Recorre el mapa con tu Mokepon</h1>
+        <canvas id="mapa"></canvas>
+        <div id="direcciones">
+          <button id="botonMoverDerecha" onmouseup="detenerMovimiento()" onmousedown="moverMascotaD()">➡</button>
+          <button id="botonMoverIzquierda" onmouseup="detenerMovimiento()" onmousedown="moverMascotaI()">⬅</button>
+          <button id="botonMoverArriba" onmouseup="detenerMovimiento()" onmousedown="moverMascotaA()">⬆</button>
+          <button id="botonMoverAbajo" onmouseup="detenerMovimiento()" onmousedown="moverMascotaAb()">⬇</button>
+        </div>
+    </section>
+
     <section id="seleccionar-ataque">
       <h1 class="titulo">Mokepon!</h1>
 
-      <h2 class="subtitulo">Elige tu ataque:</h2>
+      <h2 id="subtitulo">Elige tu ataque:</h2>
 
-      <div class="ataques">
-        <button id="boton-fuego" class="boton-ataque">Fuego 🔥</button>
-        <button id="boton-agua" class="boton-ataque">Agua 💦</button>
-        <button id="boton-planta" class="boton-ataque">Planta 🍃</button>
+      <div id="contenedorAtaques" class="ataques">
+        
       </div>
 
       <div id="mensajes">
         <p id="resultado"></p>
       </div>
-        
+
       <div class="combate">
         <div class="jugador">
           <p id="parrafo-jugador">Tu:</p>
-          <p id="vidas-jugador"> 3 </p>
+          <p id="vidas-jugador">0</p>
           <p id="mascota-jugador"></p>
           <div id="ataques-del-jugador"></div>
         </div>
 
         <div class="enemigo">
           <p id="parrafo-enemigo">Enemigo:</p>
-          <p id="vidas-enemigo"> 3 </p>
+          <p id="vidas-enemigo">0</p>
           <p id="mascota-enemigo"></p>
           <div id="ataques-del-enemigo"></div>
         </div>
       </div>
 
       <div id="reiniciar">
-        <section id="reiniciar"></section>
-        <button id="boton-escapar" class="boton-escape">Escapar</button>
+      <section id="reiniciar"></section>
+      <button id="boton-escapar" class="boton-escape">Escapar</button>
       </div>
-      
     </section>
+    <script meta charset="utf-8" src="./js/mokepon.js"></script>
   </body>
 </html>

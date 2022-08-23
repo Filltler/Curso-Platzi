@@ -2,7 +2,7 @@
 
 body {
   font-family: "Bebas Neue", cursive;
-  background-image: url(./assets/fondo.jpg);
+  background-image: url(./assets/pixel.png);
 }
 
 #seleccionar-mascota {
@@ -15,28 +15,45 @@ body {
 .titulo {
   height: auto;
   width: auto;
-  text-shadow: 7px 7px 10px rgb(109, 109, 109);
+  text-shadow: 7px 7px 20px rgb(77, 77, 77);
   font-size: 200px;
   display: flex;
-  color: #b93160;
+  color: #96ceb4;
   padding: 10px;
   border-radius: 20px;
-  margin: 5px;
+  margin: -30px;
   box-shadow: 3px 7px 17px -7px #ff00;
 }
 
-.subtitulo {
+.tituloMapa {
+  height: auto;
+  width: auto;
+  text-shadow: 7px 7px 20px rgb(77, 77, 77);
+  font-size: 100px;
+  text-align: center;
+  display: flex;
+  color: #96ceb4;
+  padding: 10px;
+  border-radius: 20px;
+  margin: -10px;
+  box-shadow: 3px 7px 17px -7px #ff00;
+}
+
+.subtitulo,
+#subtitulo {
   box-shadow: 3px 7px 17px -7px rgba(0, 0, 0, 0.75);
   font-size: 50px;
   display: flex;
-  color: wheat;
+  color: whitesmoke;
+  text-shadow: 3px 7px 17px 10px rgba(0, 0, 0, 0.75);
   padding: 10px;
   border-radius: 5px;
   background-color: #ac7088;
   margin: 5px 0px 20px 0px;
 }
 
-.tarjetas, .ataques {
+.tarjetas,
+.ataques {
   display: flex;
   gap: 10px;
 }
@@ -46,15 +63,22 @@ body {
   box-shadow: 3px 7px 17px -7px rgba(0, 0, 0, 0.75);
   width: 300px;
   height: 190px;
-  background: #9ed2c6;
+  background: #90aacbde;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
   display: flex;
-  color: wheat;
+  color: rgb(255, 255, 255);
   font-size: 35px;
   justify-content: center;
   align-items: stretch;
+}
+
+.tarjeta-de-mokepon:hover {
+  width: 330px;
+  height: 220px;
+  font-size: 40px;
+  transition: height 0.2s, width 0.2s, font-size 0.5s;
 }
 
 .tarjeta-de-mokepon img {
@@ -70,16 +94,23 @@ body {
   border-radius: 20px;
   background: linear-gradient(
     90deg,
-    rgba(236, 179, 144, 1) 50%,
-    rgba(238, 122, 120, 1) 100%
+    rgba(236, 179, 144, 0.87) 50%,
+    rgba(238, 122, 120, 0.87) 100%
   );
   border: none;
-  color: wheat;
+  color: whitesmoke;
   font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 20px;
+}
+
+#boton-seleccionar:hover {
+  width: 350px;
+  height: 130px;
+  font-size: 45px;
+  transition: height 0.2s, width 0.2s, font-size 0.2s;
 }
 
 .boton-escape {
@@ -91,37 +122,50 @@ body {
   border-radius: 20px;
   background: linear-gradient(
     90deg,
-    rgba(236, 179, 144, 1) 50%,
-    rgba(238, 122, 120, 1) 100%
+    rgba(236, 179, 144, 0.87) 50%,
+    rgba(238, 122, 120, 0.87) 100%
   );
   border: none;
-  color: wheat;
+  color: whitesmoke;
   font-size: 30px;
   display: flex;
   align-items: center;
   justify-content: center;
   margin-top: 5px;
 }
-
-#boton-reiniciar {
+#botonMoverDerecha,
+#botonMoverIzquierda,
+#botonMoverArriba,
+#botonMoverAbajo {
+  display: flex;
   text-shadow: 2px 3px 5px rgb(109, 109, 109);
   box-shadow: 3px 7px 17px -7px rgba(0, 0, 0, 0.75);
   font-family: "Bebas Neue", cursive;
-  width: auto;
-  height: 100px;
+  width: 90px;
+  height: 50px;
   border-radius: 20px;
   background: linear-gradient(
     90deg,
-    rgba(236, 179, 144, 1) 50%,
-    rgba(238, 122, 120, 1) 100%
+    rgba(236, 179, 144, 0.87) 50%,
+    rgba(238, 122, 120, 0.87) 100%
   );
   border: none;
-  color: wheat;
-  font-size: 30px;
+  color: whitesmoke;
+  font-size: 25px;
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 20px;
+  margin: 1px 1px 1px 1px;
+}
+#botonMoverDerecha:hover,
+#botonMoverIzquierda:hover,
+#botonMoverArriba:hover,
+#botonMoverAbajo:hover {
+  width: 95px;
+  height: 60px;
+  font-size: 30px;
+  margin: 1px 1px 1px 1px;
+  transition: height 0.2s, width 0.2s, font-size 0.2s;
 }
 
 input {
@@ -129,21 +173,15 @@ input {
 }
 
 input:checked + label {
-  background: #e9e3e3;
-  transition: background-color .5s;
+  background: #505252c2;
+  transition: background-color 0.8s;
 }
 
-input:hover + label {
-  width: 350px;
-  height: 240px;
-  font-size: 45px;
-  transition: height, width, font-size .2s;
-}
 button:hover {
   width: 200px;
   height: 120px;
   font-size: 45px;
-  transition: height, width, font-size .2s;
+  transition: height 0.2s, width 0.2s, font-size 0.3s;
 }
 #seleccionar-ataque {
   flex-direction: column;
@@ -151,19 +189,26 @@ button:hover {
 }
 
 .boton-ataque {
-  background-color: #9ed2c6;
+  background-color: #bffff0b9;
   text-shadow: 2px 3px 5px rgb(109, 109, 109);
-  width: 200px;
+  width: 74px;
   height: fit-content;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 10px;
   font-size: 35px;
   box-shadow: 3px 7px 17px -7px rgba(0, 0, 0, 0.75);
-  color: wheat;
+  color: whitesmoke;
   font-family: "Bebas Neue", cursive;
   border: 4px transparent;
-  
+  margin: 3px, 3px, 3px, 3px;
+}
+
+.boton-ataque:hover {
+  height: auto;
+  width: 90px;
+  font-size: 45px;
+  transition: height 0.2s, width 0.2s, font-size 0.3s;
 }
 
 #resultado {
@@ -189,18 +234,22 @@ button:hover {
   text-align: center;
 }
 
-#reiniciar {
+#reiniciar button:hover {
   height: auto;
   width: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  width: 220px;
+  height: 150px;
+  font-size: 35px;
+  transition: height, width, font-size 0.2s;
 }
 
 .combate {
   font-size: 20px;
-  width: 700px;
+  width: 500px;
   height: auto;
   display: grid;
   grid-template: 1fr / 50% 50%;
@@ -215,7 +264,7 @@ button:hover {
   font-size: 30px;
   text-shadow: 2px 2px 4px #a3a3a3;
   box-shadow: 3px 7px 17px -7px rgba(0, 0, 0, 0.75);
-  background: #f5e8c7;
+  background: #f5e8c7cb;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
@@ -231,7 +280,7 @@ button:hover {
   font-size: 30px;
   text-shadow: 2px 2px 4px #a3a3a3;
   box-shadow: 3px 7px 17px -7px rgba(0, 0, 0, 0.75);
-  background: #f5e8c7;
+  background: #f5e8c7cb;
   padding: 10px;
   box-sizing: border-box;
   border-radius: 20px;
@@ -316,9 +365,49 @@ button:hover {
   height: auto;
 }
 
-@media(max-width: 720px) {
-  .tarjetas, .ataques, .combate {
+#ver-mapa {
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#direcciones {
+  margin: 1px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 10px;
+  grid-auto-rows: minmax(5px, auto);
+}
+
+#botonMoverIzquierda {
+  grid-column: 1;
+  grid-row: 2;
+}
+
+#botonMoverDerecha {
+  grid-column: 3;
+  grid-row: 2;
+}
+
+#botonMoverArriba {
+  grid-column: 2;
+  grid-row: 1;
+}
+
+#botonMoverAbajo {
+  grid-column: 2;
+  grid-row: 2;
+}
+
+@media (max-width: 940px) {
+  #ver-mapa .tituloMapa {
+    font-size: 50px;
+  }
+  .tarjetas,
+  .ataques,
+  .combate {
     flex-direction: column;
+    font-size: auto;
   }
 
   .titulo {
@@ -327,7 +416,9 @@ button:hover {
 
   .combate {
     display: flex;
-    flex-direction: column;
-    width: 300px;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 150px;
   }
 }
